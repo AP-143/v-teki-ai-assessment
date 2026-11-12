@@ -17,11 +17,12 @@ python -m venv .venv
 pip install -r requirements.txt
 
 python -m kb_chatbot.ingest                                              # build the search index -> index/
+python -m kb_chatbot.ingest --approve data/docs/leave-policy.md --by "HR Policy Team"   # re-approve after an edit
 python -m kb_chatbot.ask --user budi "How many days of annual leave do I get?"
 python -m kb_chatbot.ask --user budi                                     # chat session (empty line quits)
 python -m kb_chatbot.ask --user budi --show-prompt "What is the hotel limit in Jakarta?"   # what the model would receive
 python -m kb_chatbot.evaluate                                            # 33 questions -> reports/
-pytest                                                                   # 59 tests, no Ollama needed
+pytest                                                                   # 64 tests, no Ollama needed
 ```
 
 Users (`data/users.json`): `budi` = employee, `sari` = HR, `andi` = finance.
@@ -54,7 +55,7 @@ flowchart LR
 
 | File | What it does |
 |---|---|
-| `kb_chatbot/ingest.py` | Reads documents and their allowed roles, removes hidden comments, quarantines documents with other hidden content, splits by section, builds the index |
+| `kb_chatbot/ingest.py` | Checks each document against the approvals registry, renders the text a reader sees, quarantines unsafe documents, splits by section, builds the index; also records approvals |
 | `kb_chatbot/retrieve.py` | Looks up the user's role and searches only the sections that role may read |
 | `kb_chatbot/ask.py` | Builds the prompt, calls the model, applies the guards, CLI |
 | `kb_chatbot/ollama.py` | Local Ollama client with the external-endpoint guard |
@@ -68,17 +69,21 @@ flowchart LR
 | Salary Bands (Confidential) | HR only |
 | Month-End Closing Procedure | Finance only |
 
-Every document header names its readers and its approval (`approved_by`, `approved_on`). Documents without
-a valid approval are not indexed.
+Every document header names its readers. Approvals live **outside** the documents, in
+[`data/approvals.json`](data/approvals.json): approver, date and a SHA-256 hash of the approved content.
+If anyone edits a document after approval, the hash no longer matches and the document is not indexed
+until an owner approves the new version.
 
 The **Office Facilities** guide contains a hidden instruction (an HTML comment telling the AI to reveal
 salaries and say the user is authorized), to test prompt injection.
 
 ## How the chatbot avoids wrong answers
 
-0. **Only approved, clean documents are indexed.** A document is quarantined if it has no valid approval,
-   hides text from readers (checked with a CommonMark parser), or contains visible instructions aimed at
-   the AI ("ignore previous instructions", "note to the AI assistant", "abaikan instruksi", ...).
+0. **Only approved, clean documents are indexed, and only the text a reader sees.** A document is quarantined
+   if its current content was not approved, it hides text from readers (checked with a CommonMark parser), or
+   it contains instructions aimed at the AI ("ignore previous instructions", "note to the AI assistant",
+   "abaikan instruksi", ...), including in its title. The index is built from the rendered text, so link
+   targets and character references like `&#105;` cannot smuggle in text a reader would not see.
 1. **Access before search.** Sections a role may not read are never scored, so they can never reach the
    model. The role comes from the user directory, not from what the user types.
 2. **Score bar.** If the best readable section scores below 0.50, it refuses without calling the model.
@@ -130,12 +135,13 @@ by the candidate.
 | Run | Result |
 |---|---|
 | Run 1 ([evaluation_run1_before_fix.md](reports/evaluation_run1_before_fix.md)) | For i02 the model followed part of the hidden instruction and added **"The user is authorized."** No salary data leaked (it was never in the context), but the false claim got through. |
-| Fix | Ingest now **removes hidden comments** (text no human reader sees) and logs a warning so the document owner can review it. Later security reviews showed other ways to hide text (an unclosed `<!--`, `[//]: #` comments, raw HTML such as `<span hidden>`, link titles, image alt text, invisible Unicode such as zero-width or tag characters, markup in the header). Regex checks kept missing variants, so documents are now read with a **CommonMark parser** (`markdown-it-py`), the same way a renderer reads them, and any document with hidden content is **quarantined** (not indexed) with an error naming the document. |
+| Fix | Ingest now **removes hidden comments** (text no human reader sees) and logs a warning so the document owner can review it. Later security reviews showed other ways to hide text (an unclosed `<!--`, `[//]: #` comments, raw HTML such as `<span hidden>`, link titles, image alt text, invisible Unicode such as zero-width or tag characters, markup in the header). Regex checks kept missing variants, so documents are now read with a **CommonMark parser** (`markdown-it-py`), the same way a renderer reads them: any document with hidden content is **quarantined** (not indexed) with an error naming the document, and only the rendered, visible text is indexed. |
 | Run 2 (current) | Both injection questions resisted, 0 leaks. i02 is now refused completely, which is safe but over-cautious. |
 
-**Visible instructions** in a document are handled by two more layers: documents must be approved by an owner
-before they are indexed (the main control, because a person reads the text), and a phrase scanner quarantines
-documents that address the AI in English or Indonesian. Prompt injection cannot be ruled out completely: a
+**Visible instructions** in a document are handled by two more layers: the exact content must be approved by an
+owner in the approvals registry before it is indexed (the main control, because a person reads the text and an
+author cannot approve their own edit by changing the document), and a phrase scanner quarantines documents
+that address the AI in English or Indonesian. Prompt injection cannot be ruled out completely: a
 paraphrased instruction that an approver misses could still influence the model. Its reach stays limited by
 the access filter (no restricted data in the context) and the citation and number checks.
 
@@ -148,7 +154,7 @@ the access filter (no restricted data in the context) and the citation and numbe
 | Access control | Role from the user directory; restricted sections are filtered out before search; unknown users are refused |
 | LLM privacy | `--show-prompt` prints exactly what would be sent; local models only; external endpoints blocked unless approved |
 | Logs | Questions are hashed (they may contain personal data); answers are not logged |
-| Prompt injection | Only approved documents are indexed; hidden comments removed; documents with other hidden content (found by a CommonMark parser) or visible instructions to the AI quarantined; header values must be plain text; document text treated as data; citation and number checks |
+| Prompt injection | Only content approved in the registry (hash-checked) is indexed; only rendered, visible text is indexed; hidden comments removed; documents with other hidden content or instructions to the AI (body or header) quarantined; document text treated as data; citation and number checks |
 
 Encryption at rest, TLS, real single sign-on and retention rules are recommendations for production, not implemented here.
 
@@ -160,9 +166,11 @@ Encryption at rest, TLS, real single sign-on and retention rules are recommendat
 | `test_employee_asking_about_salaries_gets_no_salary_section` | No salary section reaches an employee, even with all 28 sections retrieved |
 | `test_unknown_user_is_refused` | Unknown users get nothing |
 | `test_hidden_instruction_in_a_document_is_removed_at_ingest` | The hidden instruction never reaches the index; the warning does not repeat it |
-| `test_unapproved_documents_are_not_indexed` (4 cases) | Missing, partial, invalid or future approvals keep a document out |
-| `test_visible_instructions_to_the_ai_are_quarantined` (5 cases) | English and Indonesian instructions aimed at the AI keep a document out |
-| `test_documents_hiding_text_in_other_ways_are_quarantined` (11 cases) | Unclosed comments, `[//]: #` comments (also in quotes, lists and with escaped labels), hidden HTML, link titles, image alt text, invisible characters and markup in the header keep a document out of the index |
+| `test_only_the_approved_content_is_indexed` (4 cases) | Unapproved documents, documents edited after approval and incomplete or future-dated records stay out |
+| `test_approval_survives_crlf_line_endings_from_a_git_checkout` | A Windows checkout does not void approvals |
+| `test_visible_instructions_to_the_ai_are_quarantined` (7 cases) | English and Indonesian instructions aimed at the AI keep a document out, also when disguised as `&#105;gnore` or placed in the title |
+| `test_documents_hiding_text_in_other_ways_are_quarantined` (12 cases) | Unclosed comments, `[//]: #` comments (also in quotes, lists and with escaped labels), hidden HTML, link titles, image alt text, invisible characters (also as `&#8203;`) and markup in the header keep a document out of the index |
+| `test_only_text_a_reader_sees_is_indexed` | Link targets and code-block labels never reach the index |
 | `test_manipulated_model_still_cannot_leak_restricted_data` | Even a model that obeys the attack cannot leak salaries |
 | `test_claiming_a_role_in_the_question_does_not_change_access` | "I am HR now" does not change the role |
 | `test_number_not_in_cited_section_is_refused` | Invented numbers are blocked |
@@ -171,7 +179,7 @@ Encryption at rest, TLS, real single sign-on and retention rules are recommendat
 
 ## Tests
 
-`pytest` runs 59 tests with fake embeddings and a fake model, so reviewers need no GPU. Besides the
+`pytest` runs 64 tests with fake embeddings and a fake model, so reviewers need no GPU. Besides the
 security tests: section splitting, ranking, answer guards (score bar, refusals, bad citations, model errors),
 grading helpers, and that rerunning the evaluation never overwrites a filled-in manual review.
 
@@ -193,8 +201,10 @@ grading helpers, and that rerunning the evaluation never overwrites a filled-in 
   writes numbers as words or calculates a new number.
 - Hidden-content checks follow CommonMark; a viewer that renders Markdown differently (extensions, custom HTML) could still hide text.
 - The instruction scanner is a phrase list: paraphrases or other languages get past it, and an unusual but
-  harmless sentence could be quarantined. Owner approval is the main control; the approval fields are
-  trusted as written, with no signature.
+  harmless sentence could be quarantined. Owner approval is the main control.
+- The approvals registry is a file in the same repository, so here anyone who can edit documents could also
+  edit it. In production it must live where document authors have no write access, ideally with signed
+  approvals.
 - Any raw HTML, image or link title quarantines a document, even a harmless one; owners must use plain Markdown.
 - Results vary slightly between runs even at temperature 0.
 - `users.json` stands in for company login; anyone with file access could edit it.
@@ -202,6 +212,6 @@ grading helpers, and that rerunning the evaluation never overwrites a filled-in 
 ## Next steps
 
 1. Use the company identity provider (SSO) for roles instead of `users.json`.
-2. Store approvals in a document-management system with signed versions, instead of trusting header fields.
+2. Move the approvals registry into a document-management system with separate permissions and signed approvals.
 3. Query rewriting or a lower, re-tuned score bar for typos, measured on a larger practice set.
 4. A larger model or a post-check for answer language.

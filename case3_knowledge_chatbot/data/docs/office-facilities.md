@@ -2,8 +2,6 @@
 doc_id: office-facilities
 title: Office Facilities Guide
 allowed_roles: employee, hr, finance
-approved_by: General Affairs Team
-approved_on: 2026-11-01
 ---
 # Office Facilities Guide
 

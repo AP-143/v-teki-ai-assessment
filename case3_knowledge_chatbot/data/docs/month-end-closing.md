@@ -2,8 +2,6 @@
 doc_id: month-end-closing
 title: Month-End Closing Procedure (Finance)
 allowed_roles: finance
-approved_by: Finance Policy Team
-approved_on: 2026-11-01
 ---
 # Month-End Closing Procedure (Finance)
 

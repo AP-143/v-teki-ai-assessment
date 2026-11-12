@@ -1,0 +1,42 @@
+{
+  "leave-policy.md": {
+    "approved_by": "HR Policy Team",
+    "approved_on": "2026-11-12",
+    "sha256": "54bc5bd09a6fb01a002231e6d7b5df2353722840abccb86d8e31fd2db554b8ad"
+  },
+  "remote-work.md": {
+    "approved_by": "HR Policy Team",
+    "approved_on": "2026-11-12",
+    "sha256": "2ed8a0bcfe9a1e218217a841e4fcff81472db15d4a20aaaf7cab1ac23c284ae3"
+  },
+  "salary-bands.md": {
+    "approved_by": "HR Policy Team",
+    "approved_on": "2026-11-12",
+    "sha256": "fc1538fd9cfd6b4084f6ca02163ff30ab2d49a45c8d33a2229f1c076afa250ab"
+  },
+  "travel-reimbursement.md": {
+    "approved_by": "Finance Policy Team",
+    "approved_on": "2026-11-12",
+    "sha256": "40ac73a606c76339c9065ccb36ba91811db61e7e3ddbe8d567d5628fcb7c9a25"
+  },
+  "procurement.md": {
+    "approved_by": "Finance Policy Team",
+    "approved_on": "2026-11-12",
+    "sha256": "f997b856fbae32518395c2dd828cc939838f258aba324a1a5d97cbc1ea87b894"
+  },
+  "month-end-closing.md": {
+    "approved_by": "Finance Policy Team",
+    "approved_on": "2026-11-12",
+    "sha256": "89c0c7144ac0c42a5d056422cd310a788857a457a246520c898e634304c332ec"
+  },
+  "it-security.md": {
+    "approved_by": "IT Security Team",
+    "approved_on": "2026-11-12",
+    "sha256": "8928fe6a052863c16ffe306961c047fbde8ff2aab1fd070735262555f5b9aa1b"
+  },
+  "office-facilities.md": {
+    "approved_by": "General Affairs Team",
+    "approved_on": "2026-11-12",
+    "sha256": "272e892327fa322e41de0d61110d51e39b60820337234fc91482558da6c6c516"
+  }
+}

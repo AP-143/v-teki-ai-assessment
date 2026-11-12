@@ -2,8 +2,6 @@
 doc_id: leave-policy
 title: Leave Policy
 allowed_roles: employee, hr, finance
-approved_by: HR Policy Team
-approved_on: 2026-11-01
 ---
 # Leave Policy
 
