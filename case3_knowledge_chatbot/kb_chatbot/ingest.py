@@ -15,6 +15,18 @@ from kb_chatbot import CASE_DIR, ollama
 log = logging.getLogger("kb_chatbot")
 # Text a human reader of the document never sees must not reach the model (hidden prompt injection).
 HIDDEN = re.compile(r"<!--.*?-->", re.DOTALL)
+# Other ways to hide text from a reader. Removing them reliably needs a full Markdown renderer,
+# so a document containing any of them is quarantined instead of cleaned.
+UNSAFE = {
+    "unterminated HTML comment": re.compile(r"<!--"),
+    "raw HTML": re.compile(r"<[A-Za-z/!?][^>]*>"),
+    "link reference definition": re.compile(r"^ {0,3}\[[^\]]+\]:", re.MULTILINE),
+    "invisible or direction-changing characters": re.compile("[­​-‏‪-‮⁠-⁤﻿]"),
+}
+
+
+class UnsafeDocument(ValueError):
+    pass
 
 
 def read_doc(path):
@@ -24,7 +36,10 @@ def read_doc(path):
     if hidden := HIDDEN.findall(body):
         log.warning("document=%s had %d hidden comment(s); removed before indexing, ask the owner to review",
                     meta["doc_id"], len(hidden))
-    return meta, HIDDEN.sub("", body)
+    body = HIDDEN.sub("", body)
+    if problems := [name for name, pattern in UNSAFE.items() if pattern.search(body)]:
+        raise UnsafeDocument(f"document={meta['doc_id']} contains {', '.join(problems)}")
+    return meta, body
 
 
 def slug(text):
@@ -48,7 +63,12 @@ def split_sections(meta, body):
 
 
 def build_index(docs_dir, index_dir):
-    chunks = [c for path in sorted(Path(docs_dir).glob("*.md")) for c in split_sections(*read_doc(path))]
+    chunks = []
+    for path in sorted(Path(docs_dir).glob("*.md")):
+        try:
+            chunks += split_sections(*read_doc(path))
+        except UnsafeDocument as err:
+            log.error("%s; quarantined, not indexed. Ask the owner to remove hidden content.", err)
     vectors = ollama.embed([c["text"] for c in chunks])
     index_dir.mkdir(parents=True, exist_ok=True)
     (index_dir / "chunks.json").write_text(json.dumps(chunks, indent=2), encoding="utf-8")
