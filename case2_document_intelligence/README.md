@@ -1,4 +1,4 @@
-# Case 2 — Document Intelligence (Invoices)
+# Case 2: Document Intelligence (Invoices)
 
 Reads invoice PDFs and returns 8 fields as validated JSON. Anything incomplete, inconsistent or
 uncertain is sent to **manual review** with the exact reasons. Nothing leaves the machine: the LLM runs locally.

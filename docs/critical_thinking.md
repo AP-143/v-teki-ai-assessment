@@ -6,7 +6,7 @@ that would change my decision. Where possible I point to what I measured in my o
 
 ---
 
-## Scenario 1 — High accuracy, low fraud detection
+## Scenario 1: High accuracy, low fraud detection
 
 *A fraud model reports 98% accuracy but finds only 30% of confirmed fraud cases.*
 
@@ -42,7 +42,7 @@ and missing 70% of fraud is a business problem.
 
 ---
 
-## Scenario 2 — Unreliable data and a tight deadline
+## Scenario 2: Unreliable data and a tight deadline
 
 *Customer IDs do not match across tables; events contain duplicates and missing timestamps. Demo in two weeks.*
 
@@ -76,7 +76,7 @@ I would also confirm early **which labels exist** and who confirmed them.
 
 ---
 
-## Scenario 3 — A chatbot gives confident but wrong answers
+## Scenario 3: A chatbot gives confident but wrong answers
 
 *Your RAG chatbot gives an incorrect policy answer and cites a document that does not support it.*
 
@@ -114,7 +114,7 @@ refuse when the evidence is weak.
 
 ---
 
-## Scenario 4 — Privacy versus speed and cost
+## Scenario 4: Privacy versus speed and cost
 
 *The client wants confidential documents processed by a cheap external LLM, but no external data transfer has been approved.*
 
@@ -154,7 +154,7 @@ I would start with **A** and measure. If quality is not enough, prepare **B** wi
 
 ---
 
-## Scenario 5 — The proposed architecture costs too much
+## Scenario 5: The proposed architecture costs too much
 
 *Your design costs three times the client's budget.*
 
@@ -191,7 +191,7 @@ tests that the cheaper design still meets the requirements.
 
 ---
 
-## Scenario 6 — Ownership under uncertainty
+## Scenario 6: Ownership under uncertainty
 
 *Your team lead is unavailable for two days. You discover a wrong assumption the day before a client demo.*
 

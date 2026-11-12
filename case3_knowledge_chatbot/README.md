@@ -1,4 +1,4 @@
-# Case 3 — Enterprise Knowledge Chatbot (RAG)
+# Case 3: Enterprise Knowledge Chatbot (RAG)
 
 Answers employee questions from approved company SOPs, always with a source. It refuses when the answer
 is not in the documents, never shows documents outside the user's role, and ignores instructions hidden

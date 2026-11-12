@@ -1,4 +1,4 @@
-# Case 1 — Fraud Risk Prediction
+# Case 1: Fraud Risk Prediction
 
 Ranks payment transactions by fraud risk so analysts review the most suspicious ones first.
 The system **never decides a case is fraud**: every row starts as `PENDING_REVIEW` and an analyst decides.
