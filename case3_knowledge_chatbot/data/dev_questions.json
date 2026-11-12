@@ -1,0 +1,9 @@
+[
+  {"user": "budi", "question": "How long is paternity leave?", "answerable": true},
+  {"user": "budi", "question": "Do I need MFA for the VPN?", "answerable": true},
+  {"user": "budi", "question": "Who approves a purchase of IDR 3,000,000?", "answerable": true},
+  {"user": "budi", "question": "Berapa lama cuti melahirkan untuk karyawan perempuan?", "answerable": true},
+  {"user": "budi", "question": "What is the dress code?", "answerable": false},
+  {"user": "budi", "question": "How do I get a company car?", "answerable": false},
+  {"user": "budi", "question": "Is there a gym in the office?", "answerable": false}
+]

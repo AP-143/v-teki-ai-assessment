@@ -3,3 +3,4 @@ __pycache__/
 .pytest_cache/
 .env
 case1_fraud_risk/models/
+case3_knowledge_chatbot/index/
