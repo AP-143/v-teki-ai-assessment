@@ -50,6 +50,15 @@ def test_unsafe_uploads_get_a_4xx_not_a_crash(client, name, data, status, code):
     assert response.json()["detail"]["error"] == code
 
 
+def test_oversized_request_is_refused_before_the_body_is_parsed(client):
+    huge = b"%PDF-" + bytes(MAX_BYTES + 200 * 1024)
+
+    response = upload(client, "big.pdf", huge)
+    assert response.status_code == 413
+    assert response.json()["detail"]["message"] == "Request body too large."  # sent by the middleware, not the endpoint
+    assert upload(client, "big.pdf", huge, key=None).status_code == 401
+
+
 def test_llm_down_returns_503(client, data_dir, monkeypatch):
     def down(url, body):
         raise urllib.error.URLError("connection refused")

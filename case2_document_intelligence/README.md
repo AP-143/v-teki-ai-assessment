@@ -19,7 +19,7 @@ python -m invoice_extractor.extract data/invoices/invoice_002.pdf   # extract wi
 python -m invoice_extractor.extract --method regex data/invoices/invoice_002.pdf   # no GPU needed
 python -m invoice_extractor.extract --show-prompt data/invoices/invoice_002.pdf    # exactly what the LLM would receive
 python -m invoice_extractor.evaluate                                # regex vs LLM -> reports/evaluation.md
-pytest                                                              # 43 tests, no Ollama needed
+pytest                                                              # 44 tests, no Ollama needed
 
 # Upload API: open http://127.0.0.1:8000/docs, POST /extract, "Try it out", fill x-api-key and choose a PDF
 $env:INVOICE_API_KEY="local-demo-key"                              # macOS/Linux: export INVOICE_API_KEY=...
@@ -201,10 +201,11 @@ Encryption at rest, TLS and retention rules are recommendations for production, 
 | `test_cli_logs_contain_no_document_content_and_bad_files_do_not_crash` | Logs never contain vendor names, invoice numbers or emails |
 | `test_request_without_valid_api_key_is_refused` | No key or a wrong key gets 401 |
 | `test_unsafe_uploads_get_a_4xx_not_a_crash` | Disguised, oversized and path-traversal uploads get 4xx |
+| `test_oversized_request_is_refused_before_the_body_is_parsed` | Key and size are checked before the upload is read, so anonymous huge uploads cannot exhaust the server |
 
 ## Tests
 
-`pytest` runs 43 tests without Ollama (the LLM is replaced by a fake). Besides the security tests above:
+`pytest` runs 44 tests without Ollama (the LLM is replaced by a fake). Besides the security tests above:
 date and amount normalization, missing fields → review, invented values → review, arithmetic checks,
 unparseable or failed LLM output → review, API happy path, LLM down → 503.
 
