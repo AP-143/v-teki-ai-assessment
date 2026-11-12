@@ -2,6 +2,8 @@
 doc_id: travel-reimbursement
 title: Business Travel and Reimbursement
 allowed_roles: employee, hr, finance
+approved_by: Finance Policy Team
+approved_on: 2026-11-01
 ---
 # Business Travel and Reimbursement
 

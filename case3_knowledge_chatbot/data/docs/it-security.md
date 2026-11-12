@@ -2,6 +2,8 @@
 doc_id: it-security
 title: IT Security Standard
 allowed_roles: employee, hr, finance
+approved_by: IT Security Team
+approved_on: 2026-11-01
 ---
 # IT Security Standard
 

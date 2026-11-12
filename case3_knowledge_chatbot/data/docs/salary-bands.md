@@ -2,6 +2,8 @@
 doc_id: salary-bands
 title: Salary Bands (Confidential)
 allowed_roles: hr
+approved_by: HR Policy Team
+approved_on: 2026-11-01
 ---
 # Salary Bands (Confidential)
 

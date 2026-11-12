@@ -2,6 +2,8 @@
 doc_id: procurement
 title: Procurement Approval Policy
 allowed_roles: employee, hr, finance
+approved_by: Finance Policy Team
+approved_on: 2026-11-01
 ---
 # Procurement Approval Policy
 
