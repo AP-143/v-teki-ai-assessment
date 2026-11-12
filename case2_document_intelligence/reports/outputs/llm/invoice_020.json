@@ -1,0 +1,19 @@
+{
+  "method": "llm",
+  "status": "AUTO_ACCEPTED",
+  "review_reasons": [],
+  "fields": {
+    "invoice_number": "INV-2026-1020",
+    "invoice_date": "2026-08-02",
+    "due_date": "2026-09-01",
+    "vendor_name": "PT Teknologi Nusantara",
+    "vendor_tax_id": "69.429.854.2-062.000",
+    "subtotal": 26300000,
+    "tax_amount": 2893000,
+    "total_amount": 29193000
+  },
+  "usage": {
+    "prompt_tokens": 375,
+    "output_tokens": 144
+  }
+}

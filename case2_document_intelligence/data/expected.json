@@ -1,0 +1,392 @@
+{
+  "invoice_001.pdf": {
+    "layout": "B",
+    "fields": {
+      "invoice_number": "INV-2026-1001",
+      "invoice_date": "2026-08-11",
+      "due_date": "2026-08-25",
+      "vendor_name": "PT Teknologi Nusantara",
+      "vendor_tax_id": "74.059.931.8-219.000",
+      "subtotal": 4075000,
+      "tax_amount": 448250,
+      "total_amount": 4523250
+    }
+  },
+  "invoice_002.pdf": {
+    "layout": "C",
+    "fields": {
+      "invoice_number": "INV-2026-1002",
+      "invoice_date": "2026-08-23",
+      "due_date": "2026-10-07",
+      "vendor_name": "PT Logistik Prima",
+      "vendor_tax_id": "07.846.579.1-970.000",
+      "subtotal": 2400000,
+      "tax_amount": 264000,
+      "total_amount": 2664000
+    }
+  },
+  "invoice_003.pdf": {
+    "layout": "A",
+    "fields": {
+      "invoice_number": "INV-2026-1003",
+      "invoice_date": "2026-09-13",
+      "due_date": "2026-10-28",
+      "vendor_name": "PT Sinar Abadi",
+      "vendor_tax_id": null,
+      "subtotal": 12120000,
+      "tax_amount": 1333200,
+      "total_amount": 13453200
+    }
+  },
+  "invoice_004.pdf": {
+    "layout": "B",
+    "fields": {
+      "invoice_number": "INV-2026-1004",
+      "invoice_date": "2026-07-13",
+      "due_date": "2026-08-27",
+      "vendor_name": "CV Maju Bersama",
+      "vendor_tax_id": "63.696.544.6-795.000",
+      "subtotal": 4800000,
+      "tax_amount": 528000,
+      "total_amount": 5328000
+    }
+  },
+  "invoice_005.pdf": {
+    "layout": "C",
+    "fields": {
+      "invoice_number": "INV-2026-1005",
+      "invoice_date": "2026-10-27",
+      "due_date": null,
+      "vendor_name": "PT Logistik Prima",
+      "vendor_tax_id": "43.746.459.4-623.000",
+      "subtotal": 16830000,
+      "tax_amount": 1851300,
+      "total_amount": 18681300
+    }
+  },
+  "invoice_006.pdf": {
+    "layout": "A",
+    "fields": {
+      "invoice_number": "INV-2026-1006",
+      "invoice_date": "2026-09-04",
+      "due_date": "2026-10-19",
+      "vendor_name": "PT Teknologi Nusantara",
+      "vendor_tax_id": "43.711.358.9-508.000",
+      "subtotal": 12655000,
+      "tax_amount": 1392050,
+      "total_amount": 14097050
+    }
+  },
+  "invoice_007.pdf": {
+    "layout": "B",
+    "fields": {
+      "invoice_number": "INV-2026-1007",
+      "invoice_date": "2026-10-29",
+      "due_date": "2026-11-28",
+      "vendor_name": "PT Data Cemerlang",
+      "vendor_tax_id": "49.908.684.5-023.000",
+      "subtotal": 23925000,
+      "tax_amount": 2631750,
+      "total_amount": 26556750
+    }
+  },
+  "invoice_008.pdf": {
+    "layout": "C",
+    "fields": {
+      "invoice_number": "INV-2026-1008",
+      "invoice_date": "2026-07-22",
+      "due_date": "2026-08-05",
+      "vendor_name": "PT Teknologi Nusantara",
+      "vendor_tax_id": "16.756.253.6-400.000",
+      "subtotal": 325000,
+      "tax_amount": 35750,
+      "total_amount": 360750
+    }
+  },
+  "invoice_009.pdf": {
+    "layout": "A",
+    "fields": {
+      "invoice_number": "INV-2026-1009",
+      "invoice_date": "2026-08-27",
+      "due_date": "2026-10-11",
+      "vendor_name": "PT Logistik Prima",
+      "vendor_tax_id": "29.154.084.2-154.000",
+      "subtotal": 38025000,
+      "tax_amount": 4182750,
+      "total_amount": 42207750
+    }
+  },
+  "invoice_010.pdf": {
+    "layout": "B",
+    "fields": {
+      "invoice_number": "INV-2026-1010",
+      "invoice_date": "2026-10-15",
+      "due_date": "2026-11-14",
+      "vendor_name": "CV Kreasi Mandiri",
+      "vendor_tax_id": null,
+      "subtotal": 1710000,
+      "tax_amount": 188100,
+      "total_amount": 1898100
+    }
+  },
+  "invoice_011.pdf": {
+    "layout": "C",
+    "fields": {
+      "invoice_number": "INV-2026-1011",
+      "invoice_date": "2026-10-24",
+      "due_date": "2026-11-07",
+      "vendor_name": "CV Maju Bersama",
+      "vendor_tax_id": "56.166.112.5-615.000",
+      "subtotal": 8720000,
+      "tax_amount": 959200,
+      "total_amount": 9679200
+    }
+  },
+  "invoice_012.pdf": {
+    "layout": "A",
+    "fields": {
+      "invoice_number": "INV-2026-1012",
+      "invoice_date": "2026-09-11",
+      "due_date": "2026-09-25",
+      "vendor_name": "PT Sinar Abadi",
+      "vendor_tax_id": "26.628.385.2-649.000",
+      "subtotal": 18150000,
+      "tax_amount": 1996500,
+      "total_amount": 20146500
+    }
+  },
+  "invoice_013.pdf": {
+    "layout": "B",
+    "fields": {
+      "invoice_number": "INV-2026-1013",
+      "invoice_date": "2026-07-15",
+      "due_date": null,
+      "vendor_name": "PT Teknologi Nusantara",
+      "vendor_tax_id": "61.848.708.2-528.000",
+      "subtotal": 12885000,
+      "tax_amount": 1417350,
+      "total_amount": 14302350
+    }
+  },
+  "invoice_014.pdf": {
+    "layout": "C",
+    "fields": {
+      "invoice_number": "INV-2026-1014",
+      "invoice_date": "2026-08-16",
+      "due_date": "2026-09-15",
+      "vendor_name": "PT Data Cemerlang",
+      "vendor_tax_id": "11.712.865.4-530.000",
+      "subtotal": 24280000,
+      "tax_amount": 2670800,
+      "total_amount": 26950800
+    }
+  },
+  "invoice_015.pdf": {
+    "layout": "A",
+    "fields": {
+      "invoice_number": "INV-2026-1015",
+      "invoice_date": "2026-09-07",
+      "due_date": "2026-09-21",
+      "vendor_name": "CV Kreasi Mandiri",
+      "vendor_tax_id": "63.364.748.0-028.000",
+      "subtotal": 19760000,
+      "tax_amount": 2173600,
+      "total_amount": 21933600
+    }
+  },
+  "invoice_016.pdf": {
+    "layout": "B",
+    "fields": {
+      "invoice_number": "INV-2026-1016",
+      "invoice_date": "2026-08-03",
+      "due_date": "2026-09-17",
+      "vendor_name": "PT Teknologi Nusantara",
+      "vendor_tax_id": "46.082.225.1-232.000",
+      "subtotal": 20040000,
+      "tax_amount": 2204400,
+      "total_amount": 22244400
+    }
+  },
+  "invoice_017.pdf": {
+    "layout": "C",
+    "fields": {
+      "invoice_number": "INV-2026-1017",
+      "invoice_date": "2026-07-27",
+      "due_date": "2026-09-10",
+      "vendor_name": "CV Maju Bersama",
+      "vendor_tax_id": null,
+      "subtotal": 25030000,
+      "tax_amount": 2753300,
+      "total_amount": 27833300
+    }
+  },
+  "invoice_018.pdf": {
+    "layout": "A",
+    "fields": {
+      "invoice_number": "INV-2026-1018",
+      "invoice_date": "2026-10-11",
+      "due_date": "2026-10-25",
+      "vendor_name": "CV Kreasi Mandiri",
+      "vendor_tax_id": "59.825.671.2-626.000",
+      "subtotal": 3860000,
+      "tax_amount": 424600,
+      "total_amount": 4284600
+    }
+  },
+  "invoice_019.pdf": {
+    "layout": "B",
+    "fields": {
+      "invoice_number": "INV-2026-1019",
+      "invoice_date": "2026-10-28",
+      "due_date": "2026-12-12",
+      "vendor_name": "PT Data Cemerlang",
+      "vendor_tax_id": "17.444.892.3-845.000",
+      "subtotal": 7480000,
+      "tax_amount": 822800,
+      "total_amount": 8302800
+    }
+  },
+  "invoice_020.pdf": {
+    "layout": "C",
+    "fields": {
+      "invoice_number": "INV-2026-1020",
+      "invoice_date": "2026-08-02",
+      "due_date": "2026-09-01",
+      "vendor_name": "PT Teknologi Nusantara",
+      "vendor_tax_id": "69.429.854.2-062.000",
+      "subtotal": 26300000,
+      "tax_amount": 2893000,
+      "total_amount": 29193000
+    }
+  },
+  "invoice_021.pdf": {
+    "layout": "A",
+    "fields": {
+      "invoice_number": "INV-2026-1021",
+      "invoice_date": "2026-07-20",
+      "due_date": null,
+      "vendor_name": "PT Sinar Abadi",
+      "vendor_tax_id": "99.818.153.2-144.000",
+      "subtotal": 650000,
+      "tax_amount": 71500,
+      "total_amount": 721500
+    }
+  },
+  "invoice_022.pdf": {
+    "layout": "B",
+    "fields": {
+      "invoice_number": "INV-2026-1022",
+      "invoice_date": "2026-07-08",
+      "due_date": "2026-07-22",
+      "vendor_name": "CV Maju Bersama",
+      "vendor_tax_id": "35.043.790.1-519.000",
+      "subtotal": 24605000,
+      "tax_amount": 2706550,
+      "total_amount": 27311550
+    }
+  },
+  "invoice_023.pdf": {
+    "layout": "C",
+    "fields": {
+      "invoice_number": "INV-2026-1023",
+      "invoice_date": "2026-09-17",
+      "due_date": "2026-11-01",
+      "vendor_name": "PT Logistik Prima",
+      "vendor_tax_id": "64.964.253.8-897.000",
+      "subtotal": 6870000,
+      "tax_amount": 755700,
+      "total_amount": 7625700
+    }
+  },
+  "invoice_024.pdf": {
+    "layout": "A",
+    "fields": {
+      "invoice_number": "INV-2026-1024",
+      "invoice_date": "2026-10-23",
+      "due_date": "2026-11-22",
+      "vendor_name": "PT Logistik Prima",
+      "vendor_tax_id": null,
+      "subtotal": 3700000,
+      "tax_amount": 407000,
+      "total_amount": 4107000
+    }
+  },
+  "invoice_025.pdf": {
+    "layout": "B",
+    "fields": {
+      "invoice_number": "INV-2026-1025",
+      "invoice_date": "2026-08-08",
+      "due_date": "2026-08-22",
+      "vendor_name": "PT Teknologi Nusantara",
+      "vendor_tax_id": "17.990.478.3-764.000",
+      "subtotal": 7200000,
+      "tax_amount": 792000,
+      "total_amount": 7992000
+    }
+  },
+  "invoice_026.pdf": {
+    "layout": "C",
+    "fields": {
+      "invoice_number": "INV-2026-1026",
+      "invoice_date": "2026-10-22",
+      "due_date": "2026-11-21",
+      "vendor_name": "CV Maju Bersama",
+      "vendor_tax_id": "45.326.094.5-019.000",
+      "subtotal": 33650000,
+      "tax_amount": 3701500,
+      "total_amount": 37351500
+    }
+  },
+  "invoice_027.pdf": {
+    "layout": "A",
+    "fields": {
+      "invoice_number": "INV-2026-1027",
+      "invoice_date": "2026-08-19",
+      "due_date": "2026-09-02",
+      "vendor_name": "PT Sinar Abadi",
+      "vendor_tax_id": "10.271.278.0-927.000",
+      "subtotal": 25430000,
+      "tax_amount": 2797300,
+      "total_amount": 28227300
+    }
+  },
+  "invoice_028.pdf": {
+    "layout": "B",
+    "fields": {
+      "invoice_number": "INV-2026-1028",
+      "invoice_date": "2026-10-05",
+      "due_date": "2026-11-19",
+      "vendor_name": "CV Kreasi Mandiri",
+      "vendor_tax_id": "73.506.717.5-091.000",
+      "subtotal": 3600000,
+      "tax_amount": 396000,
+      "total_amount": 4046000
+    }
+  },
+  "invoice_029.pdf": {
+    "layout": "C",
+    "fields": {
+      "invoice_number": "INV-2026-1029",
+      "invoice_date": "2026-08-24",
+      "due_date": null,
+      "vendor_name": "PT Sinar Abadi",
+      "vendor_tax_id": "33.085.622.3-068.000",
+      "subtotal": 1150000,
+      "tax_amount": 126500,
+      "total_amount": 1276500
+    }
+  },
+  "invoice_030.pdf": {
+    "layout": "A",
+    "fields": {
+      "invoice_number": "INV-2026-1030",
+      "invoice_date": "2026-08-13",
+      "due_date": "2026-09-12",
+      "vendor_name": "PT Sinar Abadi",
+      "vendor_tax_id": "23.206.954.4-643.000",
+      "subtotal": 19250000,
+      "tax_amount": 2117500,
+      "total_amount": 21367500
+    }
+  }
+}

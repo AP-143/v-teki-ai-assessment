@@ -1,0 +1,19 @@
+{
+  "method": "llm",
+  "status": "AUTO_ACCEPTED",
+  "review_reasons": [],
+  "fields": {
+    "invoice_number": "INV-2026-1018",
+    "invoice_date": "2026-10-11",
+    "due_date": "2026-10-25",
+    "vendor_name": "CV Kreasi Mandiri",
+    "vendor_tax_id": "59.825.671.2-626.000",
+    "subtotal": 3860000,
+    "tax_amount": 424600,
+    "total_amount": 4284600
+  },
+  "usage": {
+    "prompt_tokens": 456,
+    "output_tokens": 146
+  }
+}

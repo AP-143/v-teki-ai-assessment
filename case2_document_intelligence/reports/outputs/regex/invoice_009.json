@@ -1,0 +1,15 @@
+{
+  "method": "regex",
+  "status": "AUTO_ACCEPTED",
+  "review_reasons": [],
+  "fields": {
+    "invoice_number": "INV-2026-1009",
+    "invoice_date": "2026-08-27",
+    "due_date": "2026-10-11",
+    "vendor_name": "PT Logistik Prima",
+    "vendor_tax_id": "29.154.084.2-154.000",
+    "subtotal": 38025000,
+    "tax_amount": 4182750,
+    "total_amount": 42207750
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "method": "regex",
+  "status": "NEEDS_REVIEW",
+  "review_reasons": [
+    "MISSING_VENDOR_TAX_ID"
+  ],
+  "fields": {
+    "invoice_number": "INV-2026-1003",
+    "invoice_date": "2026-09-13",
+    "due_date": "2026-10-28",
+    "vendor_name": "PT Sinar Abadi",
+    "vendor_tax_id": null,
+    "subtotal": 12120000,
+    "tax_amount": 1333200,
+    "total_amount": 13453200
+  }
+}

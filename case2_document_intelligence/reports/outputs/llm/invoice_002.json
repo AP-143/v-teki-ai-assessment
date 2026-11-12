@@ -1,0 +1,19 @@
+{
+  "method": "llm",
+  "status": "AUTO_ACCEPTED",
+  "review_reasons": [],
+  "fields": {
+    "invoice_number": "INV-2026-1002",
+    "invoice_date": "2026-08-23",
+    "due_date": "2026-10-07",
+    "vendor_name": "PT Logistik Prima",
+    "vendor_tax_id": "07.846.579.1-970.000",
+    "subtotal": 2400000,
+    "tax_amount": 264000,
+    "total_amount": 2664000
+  },
+  "usage": {
+    "prompt_tokens": 357,
+    "output_tokens": 139
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "method": "regex",
+  "status": "AUTO_ACCEPTED",
+  "review_reasons": [],
+  "fields": {
+    "invoice_number": "INV-2026-1019",
+    "invoice_date": "2026-10-28",
+    "due_date": "2026-12-12",
+    "vendor_name": "PT Data Cemerlang",
+    "vendor_tax_id": "17.444.892.3-845.000",
+    "subtotal": 7480000,
+    "tax_amount": 822800,
+    "total_amount": 8302800
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "method": "llm",
+  "status": "NEEDS_REVIEW",
+  "review_reasons": [
+    "MISSING_VENDOR_TAX_ID"
+  ],
+  "fields": {
+    "invoice_number": "INV-2026-1024",
+    "invoice_date": "2026-10-23",
+    "due_date": "2026-11-22",
+    "vendor_name": "PT Logistik Prima",
+    "vendor_tax_id": null,
+    "subtotal": 3700000,
+    "tax_amount": 407000,
+    "total_amount": 4107000
+  },
+  "usage": {
+    "prompt_tokens": 377,
+    "output_tokens": 126
+  }
+}

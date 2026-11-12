@@ -1,0 +1,24 @@
+{
+  "method": "regex",
+  "status": "NEEDS_REVIEW",
+  "review_reasons": [
+    "MISSING_INVOICE_NUMBER",
+    "MISSING_INVOICE_DATE",
+    "MISSING_DUE_DATE",
+    "MISSING_VENDOR_NAME",
+    "MISSING_VENDOR_TAX_ID",
+    "MISSING_SUBTOTAL",
+    "MISSING_TAX_AMOUNT",
+    "MISSING_TOTAL_AMOUNT"
+  ],
+  "fields": {
+    "invoice_number": null,
+    "invoice_date": null,
+    "due_date": null,
+    "vendor_name": null,
+    "vendor_tax_id": null,
+    "subtotal": null,
+    "tax_amount": null,
+    "total_amount": null
+  }
+}

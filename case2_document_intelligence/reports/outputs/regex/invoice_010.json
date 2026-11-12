@@ -1,0 +1,17 @@
+{
+  "method": "regex",
+  "status": "NEEDS_REVIEW",
+  "review_reasons": [
+    "MISSING_VENDOR_TAX_ID"
+  ],
+  "fields": {
+    "invoice_number": "INV-2026-1010",
+    "invoice_date": "2026-10-15",
+    "due_date": "2026-11-14",
+    "vendor_name": "CV Kreasi Mandiri",
+    "vendor_tax_id": null,
+    "subtotal": 1710000,
+    "tax_amount": 188100,
+    "total_amount": 1898100
+  }
+}

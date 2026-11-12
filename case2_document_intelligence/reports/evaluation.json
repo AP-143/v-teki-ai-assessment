@@ -1,0 +1,70 @@
+{
+  "regex": {
+    "documents": 30,
+    "field_accuracy": 0.679,
+    "missing_field_rate": 0.332,
+    "wrong_values": 0,
+    "missing_values": 77,
+    "invented_values": 0,
+    "documents_fully_correct": 20,
+    "auto_accepted": 13,
+    "needs_review": 17,
+    "auto_accepted_with_errors": 0,
+    "review_catch_rate": 1.0,
+    "latency_median_s": 0.002,
+    "latency_p95_s": 0.003,
+    "avg_prompt_tokens": 0,
+    "avg_output_tokens": 0,
+    "local_cost_idr_per_doc": 0.0,
+    "api_cost_usd_per_doc_if_external": 0.0,
+    "accuracy_by_layout": {
+      "A": 1.0,
+      "B": 1.0,
+      "C": 0.037
+    },
+    "accuracy_by_field": {
+      "invoice_number": 0.667,
+      "invoice_date": 0.667,
+      "due_date": 0.733,
+      "vendor_name": 0.667,
+      "vendor_tax_id": 0.7,
+      "subtotal": 0.667,
+      "tax_amount": 0.667,
+      "total_amount": 0.667
+    }
+  },
+  "llm": {
+    "documents": 30,
+    "field_accuracy": 0.95,
+    "missing_field_rate": 0.03,
+    "wrong_values": 5,
+    "missing_values": 7,
+    "invented_values": 0,
+    "documents_fully_correct": 24,
+    "auto_accepted": 16,
+    "needs_review": 14,
+    "auto_accepted_with_errors": 0,
+    "review_catch_rate": 1.0,
+    "latency_median_s": 3.918,
+    "latency_p95_s": 4.176,
+    "avg_prompt_tokens": 389,
+    "avg_output_tokens": 142,
+    "local_cost_idr_per_doc": 0.16,
+    "api_cost_usd_per_doc_if_external": 0.000143,
+    "accuracy_by_layout": {
+      "A": 0.9,
+      "B": 0.988,
+      "C": 0.963
+    },
+    "accuracy_by_field": {
+      "invoice_number": 0.967,
+      "invoice_date": 0.967,
+      "due_date": 0.967,
+      "vendor_name": 0.967,
+      "vendor_tax_id": 0.9,
+      "subtotal": 0.967,
+      "tax_amount": 0.967,
+      "total_amount": 0.9
+    }
+  }
+}

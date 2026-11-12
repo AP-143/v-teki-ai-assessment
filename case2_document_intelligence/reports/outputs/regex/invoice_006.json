@@ -1,0 +1,17 @@
+{
+  "method": "regex",
+  "status": "NEEDS_REVIEW",
+  "review_reasons": [
+    "TOTAL_MISMATCH"
+  ],
+  "fields": {
+    "invoice_number": "INV-2026-1006",
+    "invoice_date": "2026-09-04",
+    "due_date": "2026-10-19",
+    "vendor_name": "PT Teknologi Nusantara",
+    "vendor_tax_id": "43.711.358.9-508.000",
+    "subtotal": 12655000,
+    "tax_amount": 1392050,
+    "total_amount": 14097050
+  }
+}

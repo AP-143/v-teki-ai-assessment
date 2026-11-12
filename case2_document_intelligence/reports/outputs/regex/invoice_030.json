@@ -1,0 +1,15 @@
+{
+  "method": "regex",
+  "status": "AUTO_ACCEPTED",
+  "review_reasons": [],
+  "fields": {
+    "invoice_number": "INV-2026-1030",
+    "invoice_date": "2026-08-13",
+    "due_date": "2026-09-12",
+    "vendor_name": "PT Sinar Abadi",
+    "vendor_tax_id": "23.206.954.4-643.000",
+    "subtotal": 19250000,
+    "tax_amount": 2117500,
+    "total_amount": 21367500
+  }
+}

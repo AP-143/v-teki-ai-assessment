@@ -1,0 +1,22 @@
+{
+  "method": "llm",
+  "status": "NEEDS_REVIEW",
+  "review_reasons": [
+    "NOT_FOUND_IN_DOCUMENT_TOTAL_AMOUNT",
+    "TOTAL_MISMATCH"
+  ],
+  "fields": {
+    "invoice_number": "INV-2026-1022",
+    "invoice_date": "2026-07-08",
+    "due_date": "2026-07-22",
+    "vendor_name": "CV Maju Bersama",
+    "vendor_tax_id": "35.043.790.1-519.000",
+    "subtotal": 24605000,
+    "tax_amount": 2706550,
+    "total_amount": 27311050
+  },
+  "usage": {
+    "prompt_tokens": 424,
+    "output_tokens": 162
+  }
+}

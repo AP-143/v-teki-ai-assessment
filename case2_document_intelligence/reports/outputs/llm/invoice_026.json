@@ -1,0 +1,19 @@
+{
+  "method": "llm",
+  "status": "AUTO_ACCEPTED",
+  "review_reasons": [],
+  "fields": {
+    "invoice_number": "INV-2026-1026",
+    "invoice_date": "2026-10-22",
+    "due_date": "2026-11-21",
+    "vendor_name": "CV Maju Bersama",
+    "vendor_tax_id": "45.326.094.5-019.000",
+    "subtotal": 33650000,
+    "tax_amount": 3701500,
+    "total_amount": 37351500
+  },
+  "usage": {
+    "prompt_tokens": 409,
+    "output_tokens": 144
+  }
+}

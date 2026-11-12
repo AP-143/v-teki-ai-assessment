@@ -1,0 +1,22 @@
+{
+  "method": "llm",
+  "status": "NEEDS_REVIEW",
+  "review_reasons": [
+    "MISSING_DUE_DATE",
+    "NOT_FOUND_IN_DOCUMENT_VENDOR_TAX_ID"
+  ],
+  "fields": {
+    "invoice_number": "INV-2026-1029",
+    "invoice_date": "2026-08-24",
+    "due_date": null,
+    "vendor_name": "PT Sinar Abadi",
+    "vendor_tax_id": "33.085.620.3-068.000",
+    "subtotal": 1150000,
+    "tax_amount": 126500,
+    "total_amount": 1276500
+  },
+  "usage": {
+    "prompt_tokens": 339,
+    "output_tokens": 131
+  }
+}

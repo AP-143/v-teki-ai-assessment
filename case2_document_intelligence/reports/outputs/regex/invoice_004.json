@@ -1,0 +1,15 @@
+{
+  "method": "regex",
+  "status": "AUTO_ACCEPTED",
+  "review_reasons": [],
+  "fields": {
+    "invoice_number": "INV-2026-1004",
+    "invoice_date": "2026-07-13",
+    "due_date": "2026-08-27",
+    "vendor_name": "CV Maju Bersama",
+    "vendor_tax_id": "63.696.544.6-795.000",
+    "subtotal": 4800000,
+    "tax_amount": 528000,
+    "total_amount": 5328000
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "method": "llm",
+  "status": "AUTO_ACCEPTED",
+  "review_reasons": [],
+  "fields": {
+    "invoice_number": "INV-2026-1014",
+    "invoice_date": "2026-08-16",
+    "due_date": "2026-09-15",
+    "vendor_name": "PT Data Cemerlang",
+    "vendor_tax_id": "11.712.865.4-530.000",
+    "subtotal": 24280000,
+    "tax_amount": 2670800,
+    "total_amount": 26950800
+  },
+  "usage": {
+    "prompt_tokens": 373,
+    "output_tokens": 143
+  }
+}
